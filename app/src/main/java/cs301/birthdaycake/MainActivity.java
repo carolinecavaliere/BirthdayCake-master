@@ -3,6 +3,9 @@ package cs301.birthdaycake;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,5 +14,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_main);
+        CakeView ref = findViewById(R.id.cakeview);
+        CakeController cakeController = new CakeController(ref);
+        Button blowOut = findViewById(R.id.button2);
+        blowOut.setOnClickListener(cakeController);
     }
+    public void goodbye(View button) {
+        Log.i("button","Goodbye");
+    }
+
 }

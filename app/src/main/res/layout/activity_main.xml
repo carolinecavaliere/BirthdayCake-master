@@ -59,6 +59,8 @@
                 android:id="@+id/seekBar2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:max="5"
+                android:progress="2"
                 android:layout_weight="60" />
         </LinearLayout>
 
@@ -72,12 +74,14 @@
                 android:id="@+id/frosting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:checked ="true"
                 android:text="Frosting" />
 
             <Switch
                 android:id="@+id/candles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:checked ="true"
                 android:text="Candles" />
 
         </LinearLayout>
@@ -100,6 +104,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="goodbye"
                 android:text="Goodbye" />
 
         </LinearLayout>
