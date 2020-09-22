@@ -95,7 +95,6 @@ public class CakeView extends SurfaceView {
 
     }
 
-
     /**
      * onDraw is like "paint" in a regular Java program.  While a Canvas is
      * conceptually similar to a Graphics in javax.swing, the implementation has
@@ -137,6 +136,8 @@ public class CakeView extends SurfaceView {
             }
         }
 
+        drawCoords(canvas);
+
         if(cakeModel.hasBalloon == true)
         {
             canvas.drawOval(cakeModel.xTouchCoordinate-15.0f, cakeModel.yTouchCoordinate-25.0f, cakeModel.xTouchCoordinate+15.0f, cakeModel.yTouchCoordinate+15.0f, balloonPaint);
@@ -147,6 +148,14 @@ public class CakeView extends SurfaceView {
     public CakeModel getCakeModel()
     {
         return cakeModel;
+    }
+
+    public void drawCoords(Canvas canvas){
+        Paint paint = new Paint();
+
+        paint.setTextSize(30);
+        paint.setColor(Color.RED);
+        canvas.drawText("X: " + cakeModel.screenX + "    Y: " + cakeModel.screenY ,1500,700, paint);
     }
 
 }//class CakeView

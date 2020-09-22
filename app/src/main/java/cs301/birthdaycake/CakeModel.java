@@ -9,4 +9,7 @@ public class CakeModel {
    public boolean hasBalloon = false;
    public float xTouchCoordinate = 0;
    public float yTouchCoordinate = 0;
+
+   public float screenX = 0;
+   public float screenY = 0;
 }

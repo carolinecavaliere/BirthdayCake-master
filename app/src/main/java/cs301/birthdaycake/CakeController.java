@@ -6,11 +6,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
+import android.widget.Toast;
 
 public class CakeController implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener, View.OnTouchListener
 {
     private CakeView viewCake = null;
     private CakeModel cakeModel = null;
+    //public float screenX = 0;
+    //public float screenY = 0;
 
     public CakeController(CakeView c)
     {
@@ -50,11 +53,18 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
     }
 
     @Override
-    public boolean onTouch(View view, MotionEvent motionEvent) {
-        cakeModel.xTouchCoordinate = motionEvent.getX();
-        cakeModel.yTouchCoordinate = motionEvent.getY();
+    public boolean onTouch(View view, MotionEvent event) {
+        cakeModel.xTouchCoordinate = event.getX();
+        cakeModel.yTouchCoordinate = event.getY();
         cakeModel.hasBalloon = true;
         viewCake.invalidate();
+        if(event.getAction() == MotionEvent.ACTION_DOWN){
+            cakeModel.screenX = event.getX();
+            cakeModel.screenY = event.getY();
+            Log.d("TestTouch", "There was a touch");
+            viewCake.invalidate();}
+
         return true;
+
     }
 }
