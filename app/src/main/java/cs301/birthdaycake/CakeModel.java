@@ -7,8 +7,6 @@ public class CakeModel {
    public boolean hasFrosting = true;
    public boolean hasCandles = true;
    public boolean hasBalloon = false;
-   public float xTouchCoordinate = 0;
-   public float yTouchCoordinate = 0;
 
    public float screenX = 0;
    public float screenY = 0;

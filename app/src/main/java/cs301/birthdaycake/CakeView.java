@@ -140,8 +140,8 @@ public class CakeView extends SurfaceView {
 
         if(cakeModel.hasBalloon == true)
         {
-            canvas.drawOval(cakeModel.xTouchCoordinate-15.0f, cakeModel.yTouchCoordinate-25.0f, cakeModel.xTouchCoordinate+15.0f, cakeModel.yTouchCoordinate+15.0f, balloonPaint);
-            canvas.drawLine(cakeModel.xTouchCoordinate, cakeModel.yTouchCoordinate, cakeModel.xTouchCoordinate, cakeModel.yTouchCoordinate+60.0f, balloonPaint);
+            canvas.drawOval(cakeModel.screenX-15.0f, cakeModel.screenY-25.0f, cakeModel.screenX+15.0f, cakeModel.screenY+15.0f, balloonPaint);
+            canvas.drawLine(cakeModel.screenX, cakeModel.screenY, cakeModel.screenX, cakeModel.screenY+60.0f, balloonPaint);
         }
     }//onDraw
 
