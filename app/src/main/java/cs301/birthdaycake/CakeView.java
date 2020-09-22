@@ -132,11 +132,21 @@ public class CakeView extends SurfaceView {
                 }
             }
         }
+
+        drawCoords(canvas);
     }//onDraw
 
     public CakeModel getCakeModel()
     {
         return cakeModel;
+    }
+
+    public void drawCoords(Canvas canvas){
+        Paint paint = new Paint();
+
+        paint.setTextSize(30);
+        paint.setColor(Color.RED);
+        canvas.drawText("X: " + cakeModel.screenX + "    Y: " + cakeModel.screenY ,1500,700, paint);
     }
 
 }//class CakeView
